@@ -47,7 +47,7 @@ name = "Zen"
 print("My name is", name) # ('My name is', 'Zen')
 ```
 
-String concatenation (plus sign):
+String concatenation: (plus sign)
 
 ```python
 name = "Zen"
