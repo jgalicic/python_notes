@@ -414,3 +414,81 @@ def add(a=10, b=20):
 
 add(5) # 25
 ```
+
+<br><a id="7"></a>
+
+---
+
+---
+
+---
+
+## 6. Classes
+
+---
+
+---
+
+---
+
+Create a class:
+
+```python
+class User:
+  def __init__(self, username, email_address):
+    self.name = username
+    self.email = email_address
+    self.account_balance = 0
+
+# create new instances of the class:
+guido = User("Guido van Rossum", "guido@python.com")
+monty = User("Monty Python", "monty@python.com")
+
+# print name
+print(guido.name)	# Guido van Rossum
+print(monty.name)	# Monty Python
+```
+
+Using Methods:
+
+```python
+class User:
+  def __init__(self, name, email):
+    self.name = name
+    self.email = email
+    self.account_balance = 0
+  def make_deposit(self, amount): # make_deposit method
+    self.account_balance += amount
+
+# run methods
+guido.make_deposit(100)
+guido.make_deposit(200)
+monty.make_deposit(50)
+
+# print account_balance
+print(guido.account_balance) # 300
+print(monty.account_balance) # 50
+
+```
+
+Association between classes
+
+```python
+# BankAccount will be encapsulated by the User class below
+class BankAccount:
+  def __init__(self, account_balance=0, interest_rate=.01):
+    self.account_balance = account_balance
+    self.interest_rate = interest_rate
+  def deposit(self, amount):
+    self.account_balance += amount
+    return self
+
+class User:
+  def __init__(self, name, email):
+    self.name = name
+    self.email = email
+    self.account = BankAccount(int_rate=0.02, balance=0)
+  def example_method(self):
+        self.account.deposit(100) # call the BankAccount instance's methods
+    	print(self.account.account_balance)
+```
